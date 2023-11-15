@@ -1,4 +1,4 @@
 export async function POST(request: Request) {
     console.log(request.body)
-    return Response.json({ message: 'Hello world' });
+    return Response.json({message: 'Hello world', body: request.body});
 }
