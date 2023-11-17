@@ -10,7 +10,7 @@ export async function POST(req: any) {
 
     client.on('connect', function () {
         if(data) {
-            console.log(`${data.context}, ${data.description}, ${data.state}`);
+            console.log(`process: ${data.context}, ${data.description}, ${data.state}`);
             client.publish('test/event', `${data.context}, ${data.description}, ${data.state}`);
         }
     });
