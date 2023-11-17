@@ -9,7 +9,7 @@ export default function Home() {
         publish,
         subscribe,
         unsubscribe
-    } = useMqtt(process.env.URL ?? "");
+    } = useMqtt(process.env.NEXT_PUBLIC_URL ?? "");
 
     useEffect(() => {
         if (isConnected) {

@@ -19,12 +19,13 @@ const useMqtt = (brokerUrl: string, options?: IClientOptions) => {
     // Connect to MQTT broker
     useEffect(() => {
         mqttClient.current = mqtt.connect(brokerUrl,  {
-            username: process.env.USERNAME ?? "",
-            password: process.env.PASSWORD ?? "",
+            username: process.env.NEXT_PUBLIC_USERNAME,
+            password: process.env.NEXT_PUBLIC_PASSWORD,
         });
 
         mqttClient.current.on('connect', () => {
             setIsConnected(true);
+            console.log("message")
         });
 
         mqttClient.current.on('message', handleIncomingMessage);
