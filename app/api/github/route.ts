@@ -8,6 +8,8 @@ export async function POST(req: any) {
         password: process.env.PASSWORD ?? ""
     })
 
+    console.log(`${data.context}, ${data.description}, ${data.state}`)
+
     client.on('connect', function () {
         if(data.starred_at) {
             console.log("published");
